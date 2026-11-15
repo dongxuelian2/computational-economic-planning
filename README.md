@@ -2,6 +2,8 @@
 
 A **theorem-first, reproducible research program** on production-network feasibility, dynamic inventory/capacity decisions, and the information requirements of coordination. The codebase retains its classical static Leontief reference implementation, while the active research program tests **published mathematical claims** with explicit counterexamples and proofs.
 
+**Active research tracker:** [Issue #3 — capacity-information theory](https://github.com/dongxuelian2/computational-economic-planning/issues/3). Detailed documentation changes are in [draft PR #2](https://github.com/dongxuelian2/computational-economic-planning/pull/2).
+
 ## Two levels of work
 
 **Reference baseline (classical):** For nonnegative input coefficients \(A\) and final demand \(d\), solve \((I-A)x=d\) subject to production viability and capacities. [Draft PR #1](https://github.com/dongxuelian2/computational-economic-planning/pull/1) adds matrix-box uncertainty bounds and demand-headroom calculations. This is a documented reference, **not** a new Leontief theorem.
