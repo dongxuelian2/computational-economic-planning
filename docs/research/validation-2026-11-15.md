@@ -1,5 +1,23 @@
 # Sharp ACI timing theorem audit, 2026-11-15
 
+## Manuscript continuation
+
+The full paper `manuscript/main.tex` now classifies every positive cost ratio.
+Independent model-agent and integration reviews confirmed the proof and
+identified scope fixes now incorporated: smallest-target selection, the
+separate correlated loss-location experiment, and location independent of
+demands. Each of the whole-real-line and independent knot solvers passed
+1,168 all-phase certificates at 73 distinct probabilities; the scenario-tree
+LP passed 102 comparisons; all 13 tests passed. All 7 final PDF pages were
+rendered and inspected and the final LaTeX log has no overflow or undefined
+reference warning. A user-authorized author-copy request was sent; no reply
+has yet been received. Version/priority coverage and access failures are
+recorded in the new literature audit. The paper does not claim a correction
+to the unavailable final journal theorem. Author identity is omitted at the
+user's request. The earlier snapshot below is historical.
+
+## Initial proof-note snapshot
+
 Scope: [the all-probability phase theorem](aci_sharp_timing_theorem.md),
 including continuous-order boundary intervals and matched loss-location
 information. This is not an external proof review.

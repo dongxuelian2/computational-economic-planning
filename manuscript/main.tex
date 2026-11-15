@@ -1,0 +1,457 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\hypersetup{pdftitle={Capacity-loss timing and optimal inventory targets: a complete three-period classification}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\argmin}{\mathop{\rm arg\,min}}
+\newcommand{\Ecase}{\mathsf E}
+\newcommand{\Lcase}{\mathsf L}
+\title{Capacity-loss timing and optimal inventory targets:\\a complete three-period classification}
+\author{}
+\date{}
+\makeatletter
+\renewcommand{\maketitle}{\begin{center}{\Large\bfseries\@title\par}\end{center}\vspace{0.5em}}
+\makeatother
+\begin{document}
+\maketitle
+\begin{abstract}
+An earlier loss of production capacity need not increase the current
+base-stock target more than an equally large later loss. We give a complete
+classification for a three-period backlogged inventory model with
+independent identically distributed two-point demand. For every
+nondegenerate demand probability and every positive holding-to-backlog
+cost specification, six explicit cost thresholds determine both target
+sets, including all intervals of optimal real orders at equality.
+Two open cost regions exhibit the reversed temporal ordering and two
+exhibit the opposite ordering. Both signs attain the universal
+one-loss target-spread bound. A low-backlog example also contradicts the
+claim that both targets coincide when holding cost exceeds backlog cost.
+The reversals persist under explicit continuous-density demand
+perturbations. In a separately specified loss-location information
+experiment, we compute exact value of information and minimax regret.
+The classification follows from symbolic Bellman slopes; independent
+exact and scenario-tree implementations accompany the analysis.
+\end{abstract}
+\noindent\textbf{Keywords:} inventory control; advance capacity information;
+base-stock policy; comparative statics; value of information.\\
+\textbf{2020 Mathematics Subject Classification:} 90B05, 90C39.
+
+\section{Introduction}
+Advance capacity information changes inventory decisions by revealing
+future replenishment constraints. This raises two different comparative
+statics questions: how much a target can change after a capacity loss,
+and how the change depends on the time of that loss. A coordinate
+sensitivity bound does not by itself order the effects of losses in
+different periods.
+
+The temporal ordering is stated in Jak\v{s}i\v{c}'s thesis
+\cite[Conjecture 2.1]{Thesis}: an earlier equal capacity reduction is
+proposed to produce at least as high a current target. The preceding
+discussion on printed page 31 additionally states that the two targets
+coincide when $h>b$. The 2008 working paper \cite[Theorem 4(1)]{WP}
+contains the temporal assertion as a theorem. These are the precisely
+identified versions examined here. A related 2011 journal article is
+\cite{Journal}; its final typeset theorem is not assumed identical to
+either of these versions, and no correction of that final text is
+claimed in this paper.
+
+We resolve the temporal comparison completely in one finite-horizon
+family. For each demand probability $p\in(0,1)$, six explicit thresholds
+partition \emph{all} positive cost ratios. Reversals occur both below and
+above the myopic cost threshold. The examples attain both signs of the
+sharp universal target-spread bound and remain valid for small
+continuous-density demand perturbations. The result concerns target
+decisions; it does not rank total optimized costs or welfare losses.
+
+Other supply-information models have different primitives. Altu\u{g} and
+Muharremo\u{g}lu \cite{Altug} model evolving capacity forecasts, whereas
+Atasoy, G\"ull\"u and Tan \cite{Atasoy} consider deterministic
+nonstationary demand with all-or-nothing availability. A recent model
+allows capacity to carry over and regenerate \cite{Senga}; our unused
+period capacity expires. These distinctions matter when transferring
+policy comparisons. The present classification does not assert that
+base-stock optimality or the general value of information is new.
+
+\section{Model and complete classification}\label{sec:model}
+There are three periods, zero lead time, nonnegative real orders,
+full backlogging, no ordering cost, no terminal salvage and no discount.
+The end-of-period loss is
+\[
+ \ell(x)=h x_++b(-x)_+,\qquad h,b>0.
+\]
+Demands are iid with $D_t=2\eta B_t$,
+$\Pr(B_t=1)=p\in(0,1)$, and $\eta>0$.
+An order placed in period $t$ is bounded by known capacity $q_t$.
+For $V_4=0$, define
+\begin{equation}\label{eq:bellman}
+ J_t(y)=\EE[\ell(y-D_t)+V_{t+1}(y-D_t)],\qquad
+ V_t(x)=\min_{0\le z\le q_t}J_t(x+z).
+\end{equation}
+The target set is $\argmin_yJ_t(y)$; the base-stock selector is its
+smallest member. Targets are unconstrained post-order levels, even if
+current capacity prevents reaching them. Starting inventory zero and
+$q_1\ge4\eta$ make every target in this paper feasible.
+
+Starting from future capacities $(\eta,2\eta)$, compare the early-loss
+and late-loss vectors
+\[
+ q^{\Ecase}=(0,2\eta),\qquad q^{\Lcase}=(\eta,\eta).
+\]
+Both remove $\eta$ units and leave the same total future capacity.
+They are compared as deterministic known future vectors. They can also
+be conditional ACI states of independent capacity laws assigning positive
+probability to all their coordinates. A two-point prior on \emph{these
+vectors alone} is a different experiment, specified in
+Section~\ref{sec:information}.
+
+Set $r=b/h$, $u=1-p$, $c=3-3p+p^2$ and $r_0=u/p$. Define
+\begin{align}\label{eq:thresholds}
+ A&=\frac{uc}{p(5-3p+p^2)},&
+ B&=\frac{uc}{p(4-2p+p^2)},&
+ C&=\frac{u(3-p)}{3p},\notag\\
+ L&=\frac{3-p-p^2}{2p^2},&
+ E&=\frac{3-2p+p^2-p^3}{p^2(1+p)},&
+ U&=\frac{3-p+p^2-p^3}{p^3}.
+\end{align}
+
+\begin{theorem}\label{thm:phase}
+For every $p\in(0,1)$,
+\[
+ 0<A<B<C<r_0<L<E<U.
+\]
+The complete target sets $S_{\Ecase},S_{\Lcase}$ for all $r>0$ are
+\begin{equation}\label{eq:targetsets}
+ \eta^{-1}S_{\Ecase}=
+ \begin{cases}
+ \{0\},&r<B,\\
+ [0,2],&r=B,\\
+ \{2\},&B<r<E,\\
+ [2,4],&r=E,\\
+ \{4\},&r>E,
+ \end{cases}
+\qquad
+ \eta^{-1}S_{\Lcase}=
+ \begin{cases}
+ \{0\},&r<A,\\
+ [0,1],&r=A,\\
+ \{1\},&A<r<C,\\
+ [1,2],&r=C,\\
+ \{2\},&C<r<L,\\
+ [2,3],&r=L,\\
+ \{3\},&L<r<U,\\
+ [3,4],&r=U,\\
+ \{4\},&r>U.
+ \end{cases}
+\end{equation}
+In particular, $r_0$ is not an additional first-period phase boundary.
+\end{theorem}
+
+For unique targets, $s_{\Lcase}-s_{\Ecase}=\eta$ on $(A,B)$ and
+$(L,E)$, while it equals $-\eta$ on $(B,C)$ and $(E,U)$.
+Thus demand frequency alone cannot impose a universal temporal ordering
+in this family. At equality thresholds, the intervals in
+\eqref{eq:targetsets}, rather than just their integer
+endpoints, are optimal.
+
+\subsection{Convex clipping}
+Rescale to $\eta=h=1$. Let $G(y)=\EE\ell(y-D)$ and
+$a=u-pr$. Its slopes on the intervals separated by $0,2$ are $-r,a,1$.
+Every objective in \eqref{eq:bellman} is finite, convex and piecewise
+linear. For any such $J$, capacity clipping
+$T_qJ(x)=\min_{0\le z\le q}J(x+z)$ has right derivative
+\begin{equation}\label{eq:clip}
+ (T_qJ)'_+(x)=\Phi_qJ'_+(x)
+ =\max\{J'_+(x),0\}+\min\{J'_+(x+q),0\}.
+\end{equation}
+If the minimizer interval of $J$ is $[s_-,s_+]$, the clipped minimizer
+interval is $[s_--q,s_+]$. Below that interval optimize at $x+q$;
+above it optimize at $x$. This proves \eqref{eq:clip} and handles flat
+recourse optima without an arbitrary choice of minimizer.
+
+\subsection{Low cost ratios}\label{sec:low}
+Here $a>0$, and $G$ has unique target zero. With $q_3=2$, $V_3$ has
+slopes $-r,0,a,1$ at breakpoints $-2,0,2$. The early-loss period-2
+objective has slopes
+\[
+ -(1+p)r\quad(-2,0),\qquad a(2-p)\quad(0,2),\qquad
+ 2-p+pa\quad(2,4).
+\]
+As $q_2=0$, $V_2=J_2$, and
+\begin{align}\label{eq:elow}
+ J'_{1,\Ecase}|_{(0,2)}&=uc-pr(4-2p+p^2)
+                      =p(4-2p+p^2)(B-r),\notag\\
+ J'_{1,\Ecase}|_{(2,4)}&=c+pa(3-2p)>0.
+\end{align}
+The objective decreases strictly below zero; hence \eqref{eq:elow}
+proves the early-loss alternatives at threshold $B$.
+
+For the late loss, $q_3=1$ and the terminal clipped slopes $-r,0,a,1$
+have breakpoints $-1,0,2$. Define
+\[
+ b_0=u(2-p)-pr(3-p),\qquad R_0=\frac{u(2-p)}{p(3-p)}.
+\]
+The period-2 slopes on $(0,1),(1,2),(2,3),(3,4)$ are
+$b_0,a(2-p),2-p+pa,2-p+pa$. Its target is zero below $R_0$, one
+above $R_0$, and the interval $[0,1]$ at equality. Clipping with $q_2=1$
+gives
+\begin{align}\label{eq:dlow}
+ d_0:=J'_{1,\Lcase}|_{(0,1)}&=a+u\max(b_0,0)-p(1+p)r,\notag\\
+ d_1:=J'_{1,\Lcase}|_{(1,2)}&=ac+p\min(b_0,0).
+\end{align}
+Below $R_0$ these are $p(5-3p+p^2)(A-r)$ and $ac>0$;
+above $R_0$ they are $u-pr(2+p)$ and $3p(C-r)$.
+The identities
+\[
+ R_0-A=\frac{u(1+p-p^2)}{p(3-p)(5-3p+p^2)}>0,\qquad
+ C-R_0=\frac{uc}{3p(3-p)}>0
+\]
+show that the two current slopes cross zero only at $A$ and $C$.
+At $R_0$, $d_0<0<d_1$ and both branch formulas agree.
+The derivative below zero is negative and that on $(2,3)$ is positive.
+Convexity proves the low-cost late-loss classification globally.
+
+\subsection{High cost ratios}\label{sec:high}
+Now $a<0$ and $G$ has unique target 2. For the early loss, $V_3$ has
+slopes $-r,a,0,1$ at breakpoints $-2,0,2$. The period-2 target is 2,
+and the current slopes are
+\begin{equation}\label{eq:ehigh}
+ J'_{1,\Ecase}(y)=\begin{cases}
+ a(2+p-2p^2)-p(1+p)r<0,&0<y<2,\\
+ p^2(1+p)(E-r),&2<y<4,\\
+ 3-p>0,&4<y<6.
+ \end{cases}
+\end{equation}
+This gives the early-loss transition at $E$, including the whole
+minimizer interval $[2,4]$ at equality.
+
+For the late loss, $V_3$ has slopes $-r,a,0,1$ at $-1,1,2$.
+The period-2 slopes on the four consecutive unit intervals from 0 to 4 are
+\[
+ b_0,\quad a(1+p),\quad B_2=2-p^2(1+r),\quad 2-p.
+\]
+Its target changes from 2 to 3 at $R=2/p^2-1$; at equality it is
+$[2,3]$. The current middle slopes are
+\begin{equation}\label{eq:dhigh}
+ \begin{array}{c|cc}
+ & (2,3)&(3,4)\\\hline
+ r\le R&2p^2(L-r)&3-3p+p^2\\
+ r\ge R&1+p-p^3-p^2(1+p)r&p^3(U-r).
+ \end{array}
+\end{equation}
+The formulas agree at $R$, where the $(2,3)$ slope is $p^2-p-1<0$.
+The $(1,2)$ slope is negative: below $R$ it is $a+pb_0<0$, and above
+$R$ there is the additional nonpositive term $uB_2$. The $(4,5)$ slope
+is positive in both regimes. Since $L<R<U$, the current target crosses
+at $L$ and $U$, as asserted.
+
+\subsection{Threshold order and the myopic boundary}
+The following positive differences establish every remaining comparison:
+\begin{align*}
+ B-A&=\frac{u^2c}{p(5-3p+p^2)(4-2p+p^2)},&
+ C-B&=\frac{u(3-p+2p^2-p^3)}{3p(4-2p+p^2)},\\
+ r_0-C&=u/3,& L-r_0&=\frac{3-3p+p^2}{2p^2},\\
+ E-L&=\frac{u(p^2-3p+3)}{2p^2(1+p)},&
+ U-E&=\frac{3-p+2p^2-p^3}{p^3(1+p)}.
+\end{align*}
+Also $R-L=(1+p-p^2)/(2p^2)>0$ and
+$U-R=(3-3p+p^2)/p^3>0$.
+At $r=r_0$, terminal and recourse optima may be intervals, but the
+early current slopes adjacent to 2 are $-(1+p)u<0$ and $c>0$;
+the late adjacent slopes are $-pu<0$ and $c>0$. Both current targets
+are uniquely 2. This completes the proof of Theorem~\ref{thm:phase}.
+
+\section{Sensitivity and sharpness}\label{sec:sensitivity}
+The next bound separates coordinate monotonicity from the false temporal
+comparison. Its coordinate statement is already present in
+\cite{WP,Thesis}; the proof does not use temporal ordering.
+
+\begin{proposition}\label{prop:sensitivity}
+In a finite-horizon, zero-order-cost, backlogged inventory system with
+linear positive holding/backlog costs, finite first demand moments,
+fixed known future capacities and a consistent smallest-minimizer
+selector, reducing one capacity by $0\le\eta\le q_i$ gives
+\[
+ 0\le s(q-\eta e_i)-s(q)\le\eta.
+\]
+Two equal coordinate-loss scenarios relative to one baseline therefore
+satisfy $|s(q-\eta e_i)-s(q-\eta e_j)|\le\eta$.
+Both signs attain equality in the family of Theorem~\ref{thm:phase},
+for every $p\in(0,1)$.
+\end{proposition}
+\begin{proof}
+For a nondecreasing derivative $g$, \eqref{eq:clip} implies
+\[
+ \Phi_qg(x-\eta)\le\Phi_{q-\eta}g(x)\le\Phi_qg(x).
+\]
+The clipping operator preserves derivative order and commutes with
+translations. Backward expectation preserves this sandwich. Adding the
+same convex immediate cost does as well, since its derivative is
+nondecreasing. The bounded finite-horizon linear-cost slopes justify
+passing right derivatives through expectation. Coercivity supplies
+smallest minimizers, obtained as the first point where the right
+derivative is nonnegative. Their locations therefore differ by an
+amount in $[0,\eta]$. Both loss-scenario targets lie in
+$[s(q),s(q)+\eta]$, proving the spread bound. The four strict regions
+following Theorem~\ref{thm:phase} attain its two signs.
+\end{proof}
+
+The selector condition is substantive at flat optima. The proposition
+does not bound the distance between arbitrarily and inconsistently
+chosen members of different minimizer intervals.
+
+\section{Exact counterexamples and continuous densities}\label{sec:robust}
+For $p=1/2$, the six thresholds are
+\[
+ A=7/15,\quad B=7/13,\quad C=5/6,\quad
+ L=9/2,\quad E=17/3,\quad U=21.
+\]
+Taking $h=1$, $b=1/2$, $\eta=1$ places $r$ in $(A,B)$, even though
+$h>b$. Exact objective values are
+\begin{center}
+\begin{tabular}{crr}\toprule
+$y$ & $J_{1,\Ecase}(y)$ & $J_{1,\Lcase}(y)$\\\midrule
+0 & $9/4$ & $17/8$\\
+1 & $37/16$ & $33/16$\\
+2 & $19/8$ & $5/2$\\\bottomrule
+\end{tabular}
+\end{center}
+The targets are uniquely 0 and 1, while the baseline target is 0.
+This contradicts both the proposed temporal ordering and the separate
+$h>b$ equal-target assertion on printed page 31 of \cite{Thesis}.
+For $h=1,b=5$, the targets are uniquely 2 and 3, with optimal objective
+values $6$ and $21/4$; the baseline target is 2, with value $9/2$.
+Neither example asserts that target ordering determines cost ordering.
+
+\begin{proposition}\label{prop:continuous}
+Replace the fair two-point demands in either example by iid
+$D_t^\epsilon=2B_t+U_t$, where $U_t$ is uniform on $[0,\epsilon]$
+and independent. Both strict target reversals persist for
+$\epsilon=10^{-3}$ with an absolutely continuous demand density.
+\end{proposition}
+\begin{proof}
+Let $M=\max(h,b)$. The period loss is $M$-Lipschitz, and a continuation
+with $H$ stages has Lipschitz constant at most $HM$. Coupling the two
+demand processes and using nonexpansiveness of interval minimization
+gives $\sup_y|J_1^\epsilon(y)-J_1^0(y)|\le6M\epsilon$.
+If $J_1^0(y)-\min J_1^0\ge\mu|y-y^*|$, every perturbed minimizer
+lies within $12M\epsilon/\mu$ of $y^*$. For the low-cost example,
+both growth constants are at least $1/16$ and $M=1$, giving radius
+$192\epsilon$. For the high-cost example they are at least $1/4$
+and $M=5$, giving radius $240\epsilon$. At the stated epsilon the
+neighborhoods of the two targets are disjoint.
+\end{proof}
+
+\section{A separate loss-location information experiment}\label{sec:information}
+Fix either reversal region $(A,B)$ or $(L,E)$. Suppose the early-loss
+vector has prior probability $\theta$ and the late-loss vector has
+probability $1-\theta$. In one information system the vector is revealed
+before period 1; in the other it is revealed after the first demand and
+before the period-2 order. All physical capacities, probabilities and
+recourse opportunities are otherwise identical. The random loss location
+is independent of the entire demand process and of any smoothing noises.
+This two-vector prior
+induces negative dependence between capacities; it is a separate
+common-loss experiment, not the original independent-capacity law.
+
+Let the two targets be $a\eta,(a+1)\eta$, where $a=0$ in the low-cost
+reversal and $a=2$ in the high-cost reversal. On the interval between
+them scenario regrets have slopes $e>0$ and $-\beta<0$. In the low-cost
+region,
+\begin{align}\label{eq:infolow}
+ e&=hp(4-2p+p^2)(B-r),\notag\\
+ \beta&=\begin{cases}
+ hp(5-3p+p^2)(r-A),&r\le R_0,\\
+ h[pr(2+p)-u],&r\ge R_0;
+ \end{cases}
+\end{align}
+in the high-cost region,
+\begin{align}\label{eq:infohigh}
+ e&=hp^2(1+p)(E-r),\notag\\
+ \beta&=\begin{cases}
+ 2hp^2(r-L),&r\le R,\\
+ h[p^2(1+p)r-1-p+p^3],&r\ge R.
+ \end{cases}
+\end{align}
+Convexity permits restricting the common first decision to this target
+interval. The exact expected value of revealing the loss location is
+\begin{equation}\label{eq:evpi}
+ \mathrm{EVPI}(\theta)=\eta\min\{\theta e,(1-\theta)\beta\}.
+\end{equation}
+The minimum worst-case regret without a prior is
+\begin{equation}\label{eq:minimax}
+ \eta\frac{e\beta}{e+\beta},\qquad
+ y=\eta\left(a+\frac{\beta}{e+\beta}\right).
+\end{equation}
+Indeed, a decision $a\eta+d$ incurs regrets $ed$ and
+$\beta(\eta-d)$; minimize their maximum or their prior-weighted sum.
+At the low-cost numerical example $e=\beta=1/16$, so the fair-prior
+EVPI and minimax regret are $1/32$. At the high-cost example each is
+$1/8$. These are applications of elementary decision theory within a
+precisely matched information experiment, not a new generic information
+identity.
+
+\section{Source scope, reproducibility and further questions}
+The counterexamples use the Bellman recursion and terminal condition
+of \cite{WP,Thesis}, with three periods and complete future ACI.
+Both sources permit the relevant deterministic conditional capacity
+vectors; the thesis explicitly discusses $h>b$. The continuous-density
+extension addresses any concern about the source's use of density notation.
+The final journal article \cite{Journal} is identified bibliographically,
+but its full typeset text was unavailable for the version comparison.
+Our source-specific criticism is therefore limited to the exact
+working-paper and thesis assertions identified in the introduction.
+
+Two exact implementations accompany the symbolic proof: a whole-real-line
+piecewise-linear solver, and an independently written integer-knot
+Bellman audit. Convexity and integer demand/capacity preserve integer
+breakpoints, so the latter also certifies flat real minimizer intervals.
+An additional continuous scenario-tree LP indexes orders by observed
+history and checks the shared first decision in the information experiment.
+Its floating-point results are numerical checks, not exact LP proofs.
+
+The six-threshold classification gives sharp conditions within one family.
+It leaves open a useful temporal order under wider, explicitly stated
+conditions on demand, capacity paths or horizon. It also shows why a
+one-coordinate sensitivity bound alone cannot justify truncating distant
+capacity information by an asserted temporal ranking.
+
+\begin{thebibliography}{9}
+\bibitem{WP}
+M. Jak\v{s}i\v{c}, J. C. Fransoo, T. Tan, A. G. de Kok and B. Rusjan,
+\emph{Inventory management with advance capacity information},
+BETA Working Paper 249, Eindhoven University of Technology, 2008.
+\url{https://pure.tue.nl/ws/portalfiles/portal/3296948/691623823560851.pdf}.
+\bibitem{Thesis}
+M. Jak\v{s}i\v{c}, \emph{Inventory models with uncertain supply},
+PhD thesis, Eindhoven University of Technology, 2016, Chapter 2.
+\url{https://pure.tue.nl/ws/files/41303873/20161031_Jaksic.pdf}.
+\bibitem{Journal}
+M. Jak\v{s}i\v{c}, J. C. Fransoo, T. Tan, A. G. de Kok and B. Rusjan,
+Inventory management with advance capacity information,
+\emph{Naval Research Logistics} \textbf{58} (2011), 355--369.
+\href{https://doi.org/10.1002/nav.20450}{doi:10.1002/nav.20450}.
+\bibitem{Altug}
+M. \c{S}. Altu\u{g} and A. Muharremo\u{g}lu,
+Inventory management with advance supply information,
+\emph{International Journal of Production Economics} \textbf{129} (2011), 302--313.
+\href{https://doi.org/10.1016/j.ijpe.2010.11.005}{doi:10.1016/j.ijpe.2010.11.005}.
+\bibitem{Atasoy}
+B. Atasoy, R. G\"ull\"u and T. Tan,
+Optimal inventory policies with non-stationary supply disruptions and advance
+supply information, \emph{Decision Support Systems} \textbf{53} (2012), 269--281.
+\href{https://doi.org/10.1016/j.dss.2012.01.005}{doi:10.1016/j.dss.2012.01.005}.
+\bibitem{Senga}
+J. R. L. Senga, G. A. Chua and D. Chen,
+Stochastic inventory systems with regenerative capacity,
+\emph{European Journal of Operational Research} \textbf{336} (2027), 152--166;
+first available online 7 April 2026.
+\href{https://doi.org/10.1016/j.ejor.2026.04.004}{doi:10.1016/j.ejor.2026.04.004}.
+\end{thebibliography}
+\end{document}

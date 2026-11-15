@@ -1,5 +1,16 @@
 # A sharp timing reversal theorem for advance capacity information
 
+**Complete-paper continuation:** [main.tex](../../manuscript/main.tex)
+extends this earlier high-cost theorem to all `r=b/h>0`, with six thresholds.
+See the [independent review](independent-aci-review-2026-11-15.md) for the
+low-cost proof. The paper's loss-location experiment is explicitly separate
+from the source's independent-capacity law and assumes location independent
+of demands. Its [version audit](../literature/aci-version-priority-audit-2026-11-15.md)
+records actual source coverage; the author-copy request is pending.
+Independent model-agent and integration reviews are complete, but are not
+external human peer review. Historical stopping-point language below is
+superseded by this continuation.
+
 Research proof draft, 2026-11-15. This extends the isolated `p=1/2,b/h=5`
 example to every nondegenerate Bernoulli demand frequency, characterizes
 the exact cost thresholds, and attains both directions of the universal

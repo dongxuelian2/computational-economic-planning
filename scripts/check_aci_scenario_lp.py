@@ -10,7 +10,7 @@ from itertools import product
 
 from scipy.optimize import linprog
 
-from aci_piecewise import add, objective, reversal_slopes, thresholds
+from aci_piecewise import objective, reversal_slopes, thresholds, full_thresholds
 
 
 def solve(scenarios, p, r, minimax=False):
@@ -70,7 +70,11 @@ def audit():
     checked = 0
     for p in [Q(1, 5), Q(1, 2), Q(4, 5)]:
         r0, lo, early, hi = thresholds(p)
-        for r in [(r0+lo)/2, lo, (lo+early)/2, early, (early+hi)/2, hi, hi+1]:
+        first, early_low, late_low, _, _, _ = full_thresholds(p)
+        probes = [first/2, first, (first+early_low)/2, early_low,
+                  (early_low+late_low)/2, late_low, (late_low+lo)/2,
+                  lo, (lo+early)/2, early, (early+hi)/2, hi, hi+1]
+        for r in probes:
             for capacities in [(0, 2), (1, 1)]:
                 f = objective(capacities, p, r)
                 left, right = f.argmin()
@@ -79,20 +83,20 @@ def audit():
                 assert abs(value-float(want)) < 1e-7, (p, r, capacities, value, want)
                 assert float(left)-1e-7 <= target <= float(right)+1e-7
                 checked += 1
-        r = (lo+early)/2
-        e, beta = reversal_slopes(p, r)
-        for prior in [Q(1, 4), Q(1, 2), Q(3, 4)]:
-            scenarios = [(prior, (0, 2)), (1-prior, (1, 1))]
-            value, _ = solve(scenarios, p, r)
-            f, g = objective((0, 2), p, r), objective((1, 1), p, r)
-            perfect = prior*f.value(2)+(1-prior)*g.value(3)
-            want = min(prior*e, (1-prior)*beta)
-            assert abs(value-float(perfect)-float(want)) < 1e-7
+        for r, base in [((first+early_low)/2, 0), ((lo+early)/2, 2)]:
+            e, beta = reversal_slopes(p, r)
+            for prior in [Q(1, 4), Q(1, 2), Q(3, 4)]:
+                scenarios = [(prior, (0, 2)), (1-prior, (1, 1))]
+                value, _ = solve(scenarios, p, r)
+                f, g = objective((0, 2), p, r), objective((1, 1), p, r)
+                perfect = prior*f.value(base)+(1-prior)*g.value(base+1)
+                want = min(prior*e, (1-prior)*beta)
+                assert abs(value-float(perfect)-float(want)) < 1e-7
+                checked += 1
+            value, target = solve([(Q(1, 2), (0, 2)), (Q(1, 2), (1, 1))], p, r, minimax=True)
+            assert abs(value-float(e*beta/(e+beta))) < 1e-7
+            assert abs(target-float(base+beta/(e+beta))) < 1e-7
             checked += 1
-        value, target = solve([(Q(1, 2), (0, 2)), (Q(1, 2), (1, 1))], p, r, minimax=True)
-        assert abs(value-float(e*beta/(e+beta))) < 1e-7
-        assert abs(target-float(2+beta/(e+beta))) < 1e-7
-        checked += 1
     print(f"PASS: {checked} independent scenario-tree LP comparisons (floating point)")
 
 

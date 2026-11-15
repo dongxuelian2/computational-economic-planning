@@ -2,6 +2,9 @@
 
 | Statement | Current status | Evidence / needed validation |
 | --- | --- | --- |
+| All-`p`, all-`r>0` six-threshold classification | **complete manuscript, independent model-agent review passed** | [Paper](../../manuscript/main.tex), [review](independent-aci-review-2026-11-15.md); 1,168 certificates from each of two exact solvers, 102 LP checks |
+| Low-backlog reversal despite `h>b` | **proved source-specific counterexample** | `p=1/2,h=1,b=1/2`: targets 0 and 1, contradicting thesis p.31 prose; explicit continuous-density extension |
+| Loss-location benchmark scope | **separate correlated-capacity experiment** | Location independent of demands; not the source's independent-capacity stochastic law. Low-cost fair-prior EVPI/minimax `1/32`. |
 | \(x=(I-A)^{-1}d\) and matrix-box endpoints for nonnegative productive \(A\) | **classical** M-matrix/Leontief theory, implemented on [draft PR #1](https://github.com/dongxuelian2/computational-economic-planning/pull/1) | Reproduced on synthetic examples; never label this a new economic theorem |
 | Temporal monotonicity of base-stock response to equal early vs late capacity reductions | **counterexample in source's stated model** | [ACI audit](advance_capacity_audit.md), exact 3-period iid demand; novel priority and final 2011 journal version unchecked |
 | Exact all-`p` three-period timing phase diagram | **new complete theorem proof draft, external review outstanding** | [Sharp timing theorem](aci_sharp_timing_theorem.md); explicit thresholds and boundary intervals; 504 rational real-line certificates and 54 independent floating-point LP checks |

@@ -9,6 +9,7 @@ api = runpy.run_path(str(Path(__file__).resolve().parents[1] / "scripts" / "aci_
 
 def test_complete_phase_certificates():
     api["audit"]()
+    assert api["audit_full"]() == 1168
 
 
 def test_clip_flat_minimum_and_fractional_capacity():

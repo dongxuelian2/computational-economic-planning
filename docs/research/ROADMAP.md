@@ -1,5 +1,12 @@
 # Research roadmap — 2026-11-15
 
+**Current manuscript:** [main.tex](../../manuscript/main.tex) proves the
+six-threshold classification for all positive costs and incorporates independent
+model-agent review. The [version/priority audit](../literature/aci-version-priority-audit-2026-11-15.md)
+records actual coverage and unavailable final-journal routes. An authorized
+request for the final copy has been sent to the author; its response is pending.
+The paper's criticism targets only the precisely identified thesis/WP assertions.
+
 ## Objective
 
 Use mathematics to identify rigorous, economically meaningful structure in constrained production and coordination. Begin with published questions whose assumptions, conclusions and proof status can be checked. Static nonnegative Leontief theory is a **baseline**; it should not be advertised as novel economics. The long-horizon economic world model in [research-agenda.md](../research-agenda.md) remains a destination only after sharply formulated theory and validation.

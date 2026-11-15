@@ -11,6 +11,14 @@ attain the universal target spread `eta`. Exact rational real-line Bellman
 certificates and an independent scenario-tree LP accompany the proof. External
 review and final-journal-version priority checks remain outstanding.
 
+**Manuscript-stage update:** [complete paper](manuscript/main.tex) covers
+every positive cost ratio, with six exact thresholds and all boundary intervals.
+Independent model-agent review added a low-backlog reversal (`h=1,b=1/2`)
+and corrected the loss-location benchmark's capacity-dependence scope.
+See the [review](docs/research/independent-aci-review-2026-11-15.md) and
+[version/priority audit](docs/literature/aci-version-priority-audit-2026-11-15.md).
+Build the paper with `bash scripts/build_manuscript.sh`.
+
 With Pandoc and XeLaTeX installed, `bash scripts/build_proof_pdf.sh` renders
 the complete theorem note to `output/pdf/`.
 
@@ -54,6 +62,7 @@ For the independent continuous scenario-tree LP audit:
 ~~~sh
 python -m pip install -e '.[dev,research]'
 python scripts/check_aci_scenario_lp.py
+python scripts/audit_aci_full_phase.py
 ~~~
 
 The initial code and tests live under src/econplan/ and tests/. New research notes are under docs/research/, while paper-by-paper references live under docs/literature/. This keeps classical implementation claims separate from theoretical discoveries and unreviewed proposals.

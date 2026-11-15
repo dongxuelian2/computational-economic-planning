@@ -96,12 +96,34 @@ def thresholds(p):
             (3-p+p*p-p**3)/p**3)
 
 
+def full_thresholds(p):
+    """Six first-period phase thresholds, valid for all positive costs."""
+    p = Q(p)
+    u, c = 1-p, 3-3*p+p*p
+    _, lo, early, hi = thresholds(p)
+    return (u*c/(p*(5-3*p+p*p)), u*c/(p*(4-2*p+p*p)),
+            u*(3-p)/(3*p), lo, early, hi)
+
+
 def predicted_intervals(p, r):
-    r0, lo, early, hi = thresholds(p)
-    if r <= r0:
-        raise ValueError("phase theorem assumes r>r0")
-    e = (Q(2), Q(2)) if r < early else (Q(4), Q(4)) if r > early else (Q(2), Q(4))
-    if r < lo:
+    if r <= 0:
+        raise ValueError("phase theorem assumes r>0")
+    first, early_low, late_low, lo, early, hi = full_thresholds(p)
+    if r < early_low:
+        e = (Q(0), Q(0))
+    elif r == early_low:
+        e = (Q(0), Q(2))
+    else:
+        e = (Q(2), Q(2)) if r < early else (Q(4), Q(4)) if r > early else (Q(2), Q(4))
+    if r < first:
+        late = (Q(0), Q(0))
+    elif r == first:
+        late = (Q(0), Q(1))
+    elif r < late_low:
+        late = (Q(1), Q(1))
+    elif r == late_low:
+        late = (Q(1), Q(2))
+    elif r < lo:
         late = (Q(2), Q(2))
     elif r == lo:
         late = (Q(2), Q(3))
@@ -116,12 +138,42 @@ def predicted_intervals(p, r):
 
 def reversal_slopes(p, r):
     p, r = Q(p), Q(r)
+    first, early_low, _, lo, early, _ = full_thresholds(p)
+    if first < r < early_low:
+        e = p*(4-2*p+p*p)*(early_low-r)
+        recourse = (1-p)*(2-p)/(p*(3-p))
+        beta = p*(5-3*p+p*p)*(r-first) if r <= recourse else p*r*(2+p)-(1-p)
+        return e, beta
     _, lo, early, _ = thresholds(p)
     assert lo < r < early
     e = p*p*(1+p)*(early-r)
     stage_switch = 2/(p*p)-1
     beta = 2*p*p*(r-lo) if r <= stage_switch else p*p*(1+p)*r-1-p+p**3
     return e, beta
+
+
+def audit_full():
+    """Whole-real-line audit over distinct p, all boundaries and recourse switches."""
+    probabilities = sorted({Q(i, d) for d in range(2, 16) for i in range(1, d)}
+                           | {Q(1, 1000), Q(999, 1000)})
+    count = 0
+    for p in probabilities:
+        ts = full_thresholds(p)
+        r0 = (1-p)/p
+        probes = set(ts) | {r0, (1-p)*(2-p)/(p*(3-p)), 2/(p*p)-1}
+        probes |= {(a+b)/2 for a,b in zip((Q(0),)+ts, ts+(ts[-1]+2,))}
+        for r in probes:
+            early, late = objective((0, 2), p, r), objective((1, 1), p, r)
+            assert (early.argmin(), late.argmin()) == predicted_intervals(p, r), (p, r)
+            first, early_low, _, lo, high, _ = ts
+            if first < r < early_low or lo < r < high:
+                base = Q(0) if r < early_low else Q(2)
+                es, beta = reversal_slopes(p, r)
+                assert early.value(base+1)-early.value(base) == es
+                assert late.value(base)-late.value(base+1) == beta
+            count += 1
+    print(f"PASS: {count} whole-real-line certificates at {len(probabilities)} distinct p; all six boundaries")
+    return count
 
 
 def audit():
@@ -176,3 +228,4 @@ def audit():
 
 if __name__ == "__main__":
     audit()
+    audit_full()
