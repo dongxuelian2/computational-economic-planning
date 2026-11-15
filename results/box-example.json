@@ -1,0 +1,25 @@
+{
+  "source": "synthetic, deterministic; dimensionless illustrative units",
+  "nominal_output": [
+    2.76990185387132,
+    3.9258451472191926
+  ],
+  "capacity": [
+    2.86990185387132,
+    4.025845147219193
+  ],
+  "output_lower": [
+    1.3986013986013985,
+    2.587412587412587
+  ],
+  "output_upper": [
+    5.146198830409356,
+    6.198830409356725
+  ],
+  "worst_case_slack": [
+    -2.2762969765380365,
+    -2.172985262137532
+  ],
+  "nominal_feasible": true,
+  "robust_feasible": false
+}
