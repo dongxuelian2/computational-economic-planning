@@ -88,10 +88,16 @@ class BoxInputOutputSystem:
             raise ValueError("capacity must be provided")
         baseline = self._upper.gross_output(upper_base_demand)
         growth = self._upper.gross_output(upper_growth)
+        if not np.isfinite(baseline).all() or not np.isfinite(growth).all():
+            raise FloatingPointError("gross output exceeds floating-point range")
         slack = self.capacity - baseline
         if np.any(slack < 0):
             raise ValueError("baseline demand is not robustly capacity feasible")
         active = growth > 0
         if not np.any(active):
             return float("inf")
-        return float(np.min(slack[active] / growth[active]))
+        with np.errstate(over="ignore", invalid="ignore"):
+            ratios = slack[active] / growth[active]
+        if not np.isfinite(ratios).all():
+            raise FloatingPointError("expansion ratio exceeds floating-point range")
+        return float(np.min(ratios))

@@ -160,3 +160,14 @@ def test_expansion_rejects_invalid_inputs(base, growth):
 def test_expansion_requires_capacity():
     with pytest.raises(ValueError, match="capacity"):
         BoxInputOutputSystem([[0]], [[.5]]).demand_expansion_limit([0], [1])
+
+
+def test_expansion_zero_growth_sector_is_not_bottleneck():
+    model = BoxInputOutputSystem(np.zeros((2, 2)), np.zeros((2, 2)), [0, 2])
+    assert model.demand_expansion_limit([0, 0], [0, 1]) == 2
+
+
+@pytest.mark.parametrize("a,cap,growth", [(.5, 1, 1e308), (0, 1e308, 1e-308)])
+def test_expansion_rejects_numerical_overflow(a, cap, growth):
+    with pytest.raises(FloatingPointError):
+        BoxInputOutputSystem([[0]], [[a]], [cap]).demand_expansion_limit([0], [growth])
