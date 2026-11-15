@@ -4,6 +4,16 @@ A **theorem-first, reproducible research program** on production-network feasibi
 
 **Active research tracker:** [Issue #3 — capacity-information theory](https://github.com/dongxuelian2/computational-economic-planning/issues/3). Detailed documentation changes are in [draft PR #2](https://github.com/dongxuelian2/computational-economic-planning/pull/2).
 
+**New theorem draft (2026-11-15):** [sharp ACI timing phase diagram](docs/research/aci_sharp_timing_theorem.md).
+For every Bernoulli demand probability `0<p<1`, explicit cost thresholds give
+both strict timing orderings and every boundary minimizer interval. Both signs
+attain the universal target spread `eta`. Exact rational real-line Bellman
+certificates and an independent scenario-tree LP accompany the proof. External
+review and final-journal-version priority checks remain outstanding.
+
+With Pandoc and XeLaTeX installed, `bash scripts/build_proof_pdf.sh` renders
+the complete theorem note to `output/pdf/`.
+
 ## Two levels of work
 
 **Reference baseline (classical):** For nonnegative input coefficients \(A\) and final demand \(d\), solve \((I-A)x=d\) subject to production viability and capacities. [Draft PR #1](https://github.com/dongxuelian2/computational-economic-planning/pull/1) adds matrix-box uncertainty bounds and demand-headroom calculations. This is a documented reference, **not** a new Leontief theorem.
@@ -17,6 +27,7 @@ A **theorem-first, reproducible research program** on production-network feasibi
 | [Research roadmap](docs/research/ROADMAP.md) | Main theorem target, conditional second tracks, milestones and stop criteria |
 | [Claim register](docs/research/CLAIM_REGISTER.md) | Separates validated calculations, working arguments, source defects and open problems |
 | [ACI counterexample and proof](docs/research/advance_capacity_audit.md) | Three-period exact counterexample, continuous-demand extension, independent sensitivity proof |
+| [Sharp timing theorem](docs/research/aci_sharp_timing_theorem.md) | All-`p` phase diagram, sharp spread, matched-information value and minimax regret |
 | [Common-belief factorization audit](docs/research/information_state_audit.md) | Conditional dependence induced by unobserved shared history |
 | [Production-path mathematical audit](docs/research/production_paths_audit.md) | Noncommuting power-order and series-convergence scope issues |
 | [Literature reading ledger](docs/literature/reading-ledger-2026-11-15.md) | 205 deduplicated references, with actual inspection levels and per-source notes |
@@ -35,6 +46,14 @@ To reproduce the **separate ACI research example** using only the Python standar
 
 ~~~sh
 python scripts/reproduce_aci_counterexample.py
+python scripts/aci_piecewise.py
+~~~
+
+For the independent continuous scenario-tree LP audit:
+
+~~~sh
+python -m pip install -e '.[dev,research]'
+python scripts/check_aci_scenario_lp.py
 ~~~
 
 The initial code and tests live under src/econplan/ and tests/. New research notes are under docs/research/, while paper-by-paper references live under docs/literature/. This keeps classical implementation claims separate from theoretical discoveries and unreviewed proposals.

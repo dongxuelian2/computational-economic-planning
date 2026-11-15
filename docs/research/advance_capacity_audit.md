@@ -1,5 +1,11 @@
 # Advance capacity information: exact counterexample and independent sensitivity proof
 
+**Continuation:** [sharp timing theorem](aci_sharp_timing_theorem.md) extends
+the example to every `0<p<1`, gives exact cost thresholds and all boundary
+minimizer intervals, and attains the sharp timing-spread bound with either
+sign. An exact continuous-domain solver and independent scenario-tree LP
+are now included in this repository; see that note for their roles and limits.
+
 Research audit: 2026-11-15. Source version and mathematical scope matter. The counterexample and sensitivity argument were checked in the preceding research audit, but external peer review and a complete subsequent-priority check have not occurred.
 
 ## Source and precise question
@@ -95,4 +101,4 @@ python scripts/reproduce_aci_counterexample.py
 python -m pytest -q
 ~~~
 
-The standard-library script checks rational Bellman values and adjacent slopes; convexity supplies real-order global optimality. A separate scenario-tree linear program in the November 15 research evidence bundle independently matched the same three values, but that LP script is **not yet imported into this repository**. Before manuscript/publication claims, fetch the **2011 final journal text** and conduct a forward-citation/erratum audit. A genuine novel follow-up is a sharp sufficient condition restoring temporal ranking, or matching lower/upper bounds for value of capacity information.
+The original standard-library script checks rational Bellman values and adjacent slopes; convexity supplies real-order global optimality. The continuation adds `scripts/aci_piecewise.py`, a rational Bellman solver over the whole real line, and `scripts/check_aci_scenario_lp.py`, a separate continuous scenario-tree LP implementation. The latter uses floating point and checks rather than proves the new theorem. Before claims about the final journal version, obtain the **2011 final journal text** and complete the forward-citation/erratum audit.

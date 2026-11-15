@@ -6,6 +6,14 @@ Use mathematics to identify rigorous, economically meaningful structure in const
 
 ## Primary track A — advance capacity information and inventory policy
 
+**Continuation result:** [sharp timing theorem](aci_sharp_timing_theorem.md)
+now gives a full cost-ratio phase diagram for every `0<p<1` in a three-period
+iid family, the sharp universal timing spread with equality in both directions,
+and exact value/regret for learning the loss location. The continuous-domain
+Bellman and independent scenario-tree LP implementations are included.
+External review and the final-2011-version audit remain open gates; the
+computations do not close them.
+
 **Source:** Jakšič et al., BETA Working Paper 249 (2008), and Marko Jakšič, *Inventory models with uncertain supply* (2016), Chapter 2, Conjectures 2.1–2.2. The 2011 Naval Research Logistics journal version has not been checked in full; never claim a refutation of its final theorem without reading it.
 
 1. **Source-version audit.** Obtain the 2011 final journal version (DOI 10.1002/nav.20450), identify exact published assertion, inspect subsequent errata/citations and changes from the 2008 working paper to the 2016 thesis.
