@@ -43,7 +43,8 @@ python -m pytest -q
 
 `BoxInputOutputSystem` computes sharp output endpoints and worst-case capacity
 slack for independent nonnegative coefficient/demand intervals whose upper
-matrix is productive. Run `python -m econplan.uncertainty_demo`; see
+matrix is productive. Its `demand_expansion_limit` also identifies how far a
+nonnegative demand direction can grow before an upstream capacity binds. Run `python -m econplan.uncertainty_demo`; see
 [assumptions, proof and numerical limits](docs/box-uncertainty.md).
 
 ### Repository layout

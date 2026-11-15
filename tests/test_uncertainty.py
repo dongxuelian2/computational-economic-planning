@@ -121,3 +121,42 @@ def test_numeric_strings_use_numeric_order():
     lo, hi = box.gross_output_bounds(["2"], ["10"])
     np.testing.assert_array_equal(lo, [2])
     np.testing.assert_array_equal(hi, [10])
+
+
+def test_demand_expansion_limit_is_attained_and_larger_fails():
+    model = BoxInputOutputSystem(LOW, HIGH, [10, 12])
+    base, direction = np.array([1., 1.]), np.array([2., .5])
+    limit = model.demand_expansion_limit(base, direction)
+    assert limit > 0
+    slack = model.worst_case_capacity_slack(base, base + limit * direction)
+    assert np.min(slack) == pytest.approx(0, abs=1e-12)
+    assert model.is_robustly_capacity_feasible(base, base + limit * direction)
+    assert not model.is_robustly_capacity_feasible(
+        base, base + (limit + 1e-5) * direction
+    )
+
+
+def test_expansion_accounts_for_indirect_input_bottleneck():
+    model = BoxInputOutputSystem([[0, 0], [0, 0]], [[0, .5], [0, 0]], [1, 10])
+    # Sector 2 final demand consumes sector 1 capacity, so its limit is 2, not 10.
+    assert model.demand_expansion_limit([0, 0], [0, 1]) == pytest.approx(2)
+
+
+def test_expansion_zero_growth_and_zero_headroom():
+    model = BoxInputOutputSystem([[0]], [[.5]], [2])
+    assert np.isinf(model.demand_expansion_limit([1], [0]))
+    assert model.demand_expansion_limit([1], [1]) == 0
+    with pytest.raises(ValueError, match="baseline"):
+        model.demand_expansion_limit([2], [0])
+
+
+@pytest.mark.parametrize("base,growth", [([-1], [1]), ([0], [-1]),
+                                        ([0], [np.nan]), ([0], [1, 2])])
+def test_expansion_rejects_invalid_inputs(base, growth):
+    with pytest.raises(ValueError):
+        BoxInputOutputSystem([[0]], [[.5]], [2]).demand_expansion_limit(base, growth)
+
+
+def test_expansion_requires_capacity():
+    with pytest.raises(ValueError, match="capacity"):
+        BoxInputOutputSystem([[0]], [[.5]]).demand_expansion_limit([0], [1])

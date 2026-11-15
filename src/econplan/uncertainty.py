@@ -73,3 +73,25 @@ class BoxInputOutputSystem:
         return bool(np.all(
             self.worst_case_capacity_slack(lower_demand, upper_demand) >= -tolerance
         ))
+
+    def demand_expansion_limit(
+        self, upper_base_demand: ArrayLike, upper_growth: ArrayLike
+    ) -> float:
+        """Largest lambda >= 0 with worst-case d = base + lambda * growth.
+
+        Growth is a fixed nonnegative direction (or its entrywise upper
+        bound). Returns infinity for zero growth. Raises ValueError if even
+        the baseline violates capacity. The ratio uses no feasibility slack
+        tolerance; this is a floating-point calculation, not a certificate.
+        """
+        if self.capacity is None:
+            raise ValueError("capacity must be provided")
+        baseline = self._upper.gross_output(upper_base_demand)
+        growth = self._upper.gross_output(upper_growth)
+        slack = self.capacity - baseline
+        if np.any(slack < 0):
+            raise ValueError("baseline demand is not robustly capacity feasible")
+        active = growth > 0
+        if not np.any(active):
+            return float("inf")
+        return float(np.min(slack[active] / growth[active]))

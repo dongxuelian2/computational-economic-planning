@@ -105,3 +105,27 @@ interpretations. The present result does not rank coordination mechanisms.
 world-model roadmap; this module addresses only a small static feasibility
 building block, not that full architecture. Those two papers were screened
 at abstract level for scope, not independently reproduced.
+
+## Planning application: demand headroom and indirect bottlenecks
+
+For a nonnegative demand-growth direction g and an already feasible baseline b,
+let demand's upper bound be b + lambda g. With R=(I-A_+)^{-1}, set x_b=Rb and
+y=Rg. The robust expansion limit is
+
+\[
+\lambda_* = \min_{i:y_i>0} \frac{c_i-(x_b)_i}{y_i}.
+\]
+
+Indeed, monotonicity reduces the box problem to its upper corner and linearity
+gives x(lambda)=x_b+lambda y. Each positive y_i imposes exactly the displayed
+upper bound; zero y_i imposes none, provided baseline feasibility holds. Zero
+growth yields infinity. An infeasible baseline is rejected, not labeled a
+zero-growth solution. This is a classical linear bottleneck calculation, not
+an optimal allocation across freely chosen demand directions.
+
+`demand_expansion_limit(upper_base_demand, upper_growth)` implements the formula.
+It accounts for upstream intermediate-input requirements: with A[0,1]=0.5,
+other entries zero, capacity (1,10), zero baseline and growth (0,1), sector 1
+limits expansion to 2 although sector 2 alone would permit 10. Tests verify
+attainment, violation above the limit, zero growth and infeasible baselines.
+Correlated uncertainty and near-singular numerical limitations remain as above.
