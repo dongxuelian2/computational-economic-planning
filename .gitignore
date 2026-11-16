@@ -11,3 +11,4 @@ build/
 *.parquet
 *.xlsx
 *.zip
+output/

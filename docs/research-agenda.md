@@ -1,5 +1,10 @@
 # Research agenda
 
+## Active theorem-first priority (2026-11-15)
+
+This document describes the **long-term** economy-wide modeling program. The near-term research priority, with precise mathematical hypotheses and validation gates, is [research/ROADMAP.md](research/ROADMAP.md) and [umbrella Issue #3](https://github.com/dongxuelian2/computational-economic-planning/issues/3). Advance-capacity-information conjecture auditing and convex sensitivity bounds are the current theoretical track; the static Leontief/box work remains a classical reproducible baseline. This document should not be read as claiming that every long-term milestone has already been implemented.
+
+
 ## Long-term objective
 
 Construct an empirically anchored, dynamically updated economy-wide model of production, trade, labor, logistics, household demand, capital accumulation, public services, and institutional interactions. Use it to test economic allocation and coordination rules under uncertainty.

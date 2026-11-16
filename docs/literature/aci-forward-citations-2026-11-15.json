@@ -1,0 +1,275 @@
+{
+  "retrieved_date": "2026-11-15",
+  "source": "https://api.openalex.org/works?filter=cites:W2093235326&per-page=200",
+  "scope": "metadata snapshot; not full-text reading evidence; years may be online-first/index dates",
+  "count": 20,
+  "works": [
+    {
+      "title": "Integrating Perishables into Closed-Loop Supply Chains: A Comprehensive Review",
+      "doi": "https://doi.org/10.3390/su16156705",
+      "year": 2024,
+      "openalex_id": "https://openalex.org/W4401322086",
+      "source_urls": [
+        "https://doi.org/10.3390/su16156705",
+        "https://www.mdpi.com/2071-1050/16/15/6705/",
+        "https://research.wu.ac.at/de/publications/a2792008-c9b3-451d-8bc7-245941dc6e8b"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Forecasting of lead-time demand variance: Implications for safety stock calculations",
+      "doi": "https://doi.org/10.1016/j.ejor.2021.04.017",
+      "year": 2021,
+      "openalex_id": "https://openalex.org/W3153896076",
+      "source_urls": [
+        "https://doi.org/10.1016/j.ejor.2021.04.017",
+        "https://www.sciencedirect.com/science/article/am/pii/S0377221721003313?via%3Dihub",
+        "https://orca.cardiff.ac.uk/id/eprint/140521/1/Babai%20et%20al.%20EJOR%202021.pdf",
+        "https://hal.science/hal-03415245",
+        "http://www.sciencedirect.com/science/article/pii/S0377221721003313"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "The value of information in supply chain decisions: A review of the literature and research agenda",
+      "doi": "https://doi.org/10.1016/j.cie.2018.04.034",
+      "year": 2018,
+      "openalex_id": "https://openalex.org/W2799750089",
+      "source_urls": [
+        "https://doi.org/10.1016/j.cie.2018.04.034",
+        "https://research.wur.nl/en/publications/the-value-of-information-in-supply-chains-decisions-a-review-of-t",
+        "https://edepot.wur.nl/449530"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Capacity reservation and utilization for a manufacturer with uncertain capacity and demand",
+      "doi": "https://doi.org/10.1007/s00291-016-0471-x",
+      "year": 2017,
+      "openalex_id": "https://openalex.org/W1597424211",
+      "source_urls": [
+        "https://doi.org/10.1007/s00291-016-0471-x",
+        "http://repository.tue.nl/857040",
+        "http://repository.tue.nl/884332",
+        "https://research.tue.nl/en/publications/2c519d53-6507-4dcb-b58e-ede95bdaea0d",
+        "https://research.tue.nl/files/48403237/OR_Spectrum_Youssef_Jan_Tarkan_2015_final_accepted_version.pdf",
+        "http://library.tue.nl/csp/dare/LinkToRepository.csp?recordnumber=658353",
+        "http://library.tue.nl/csp/dare/LinkToRepository.csp?recordnumber=857040",
+        "http://library.tue.nl/csp/dare/LinkToRepository.csp?recordnumber=884332",
+        "http://link.springer.com/10.1007/s00291-016-0471-x",
+        "http://repository.tue.nl/658353",
+        "https://research.tue.nl/en/publications/6b42e46e-0b21-42aa-af36-73ee3fa6ea5f",
+        "https://research.tue.nl/nl/publications/2c519d53-6507-4dcb-b58e-ede95bdaea0d",
+        "https://research.tue.nl/nl/publications/6b42e46e-0b21-42aa-af36-73ee3fa6ea5f"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Performance evaluation of a two-echelon inventory system with network lost sales",
+      "doi": "https://doi.org/10.1016/j.ejor.2023.10.009",
+      "year": 2023,
+      "openalex_id": "https://openalex.org/W4387493032",
+      "source_urls": [
+        "https://doi.org/10.1016/j.ejor.2023.10.009",
+        "https://www.sciencedirect.com/science/article/pii/S037722172300766X",
+        "https://orbilu.uni.lu/handle/10993/57110",
+        "https://orbilu.uni.lu/bitstream/10993/57110/1/Koukietal2023_EJOR_preproof.pdf",
+        "https://hal.science/hal-04957871",
+        "http://www.sciencedirect.com/science/article/pii/S037722172300766X"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Optimal inventory policies with non-stationary supply disruptions and advance supply information",
+      "doi": "https://doi.org/10.1016/j.dss.2012.01.005",
+      "year": 2012,
+      "openalex_id": "https://openalex.org/W1515482288",
+      "source_urls": [
+        "https://doi.org/10.1016/j.dss.2012.01.005",
+        "http://library.tue.nl/csp/dare/LinkToRepository.csp?recordnumber=710869",
+        "http://library.tue.nl/csp/dare/LinkToRepository.csp?recordnumber=739619",
+        "http://infoscience.epfl.ch/record/167874",
+        "http://infoscience.epfl.ch/record/195843",
+        "http://repository.tue.nl/710869",
+        "http://repository.tue.nl/739619",
+        "https://research.tue.nl/en/publications/cd323dd4-c072-4d5e-bcb4-58132e8a37eb",
+        "https://research.tue.nl/en/publications/6debc717-927e-4459-9691-3feec9a59d03",
+        "https://research.tue.nl/nl/publications/6debc717-927e-4459-9691-3feec9a59d03",
+        "https://research.tue.nl/nl/publications/cd323dd4-c072-4d5e-bcb4-58132e8a37eb",
+        "https://infoscience.epfl.ch/record/167874"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Dual sourcing in the age of near-shoring: Trading off stochastic capacity limitations and long lead times",
+      "doi": "https://doi.org/10.1016/j.ejor.2017.11.030",
+      "year": 2017,
+      "openalex_id": "https://openalex.org/W2770427162",
+      "source_urls": [
+        "https://doi.org/10.1016/j.ejor.2017.11.030",
+        "https://research.tue.nl/en/publications/6a10c748-2795-474b-bdb4-d383738c4784",
+        "https://pure.tue.nl/ws/files/85751954/Jaksic_Fransoo_Dual_sourcing_in_the_age_of_near_shoring.pdf",
+        "http://library.tue.nl/csp/dare/LinkToRepository.csp?recordnumber=870128",
+        "http://library.tue.nl/csp/dare/LinkToRepository.csp?recordnumber=878694",
+        "http://www.sciencedirect.com/science/article/pii/S037722171731041X",
+        "http://repository.tue.nl/870128",
+        "http://repository.tue.nl/878694",
+        "https://research.tue.nl/nl/publications/6a10c748-2795-474b-bdb4-d383738c4784"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Optimal inventory management with supply backordering",
+      "doi": "https://doi.org/10.1016/j.ijpe.2014.09.015",
+      "year": 2014,
+      "openalex_id": "https://openalex.org/W2056870156",
+      "source_urls": [
+        "https://doi.org/10.1016/j.ijpe.2014.09.015",
+        "https://www.sciencedirect.com/science/article/pii/S092552731400293X",
+        "http://library.tue.nl/csp/dare/LinkToRepository.csp?recordnumber=783787",
+        "http://www.sciencedirect.com/science/article/pii/S092552731400293X",
+        "http://repository.tue.nl/783787",
+        "https://research.tue.nl/en/publications/bfea3b6a-48c5-43f7-b5f1-6a314270b457",
+        "https://research.tue.nl/nl/publications/bfea3b6a-48c5-43f7-b5f1-6a314270b457"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Benefits of leadtime information and of its combination with demand forecast information",
+      "doi": "https://doi.org/10.1016/j.ijpe.2015.02.010",
+      "year": 2015,
+      "openalex_id": "https://openalex.org/W1964831465",
+      "source_urls": [
+        "https://doi.org/10.1016/j.ijpe.2015.02.010",
+        "http://www.sciencedirect.com/science/article/pii/S0925527315000444"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "An inventory model with capacity flexibility in the existence of advance capacity information",
+      "doi": "https://doi.org/10.1016/j.dss.2012.01.008",
+      "year": 2012,
+      "openalex_id": "https://openalex.org/W2079788851",
+      "source_urls": [
+        "https://doi.org/10.1016/j.dss.2012.01.008"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "From imperfection to advantage: Quantifying the benefits of imperfect advance load information for multi-truck carriers",
+      "doi": "https://doi.org/10.1016/j.tre.2025.104209",
+      "year": 2025,
+      "openalex_id": "https://openalex.org/W4411183700",
+      "source_urls": [
+        "https://doi.org/10.1016/j.tre.2025.104209"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "No Longer in the Dark: Utilizing Imperfect Advance Load Information for Single-Truck Operators",
+      "doi": "https://doi.org/10.1287/trsc.2022.1137",
+      "year": 2022,
+      "openalex_id": "https://openalex.org/W4220709268",
+      "source_urls": [
+        "https://doi.org/10.1287/trsc.2022.1137",
+        "https://doi.org/10.32920/24632796",
+        "http://dx.doi.org/10.32920/24632796.v1",
+        "https://figshare.com/articles/preprint/No_Longer_in_the_Dark_Utilizing_Imperfect_Advance_Load_Information_for_Single-Truck_Operators/24632796"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "The value of sharing advance capacity information under “zero-full” supply capacity availability",
+      "doi": "https://doi.org/10.15458/2335-4216.1273",
+      "year": 2009,
+      "openalex_id": "https://openalex.org/W1537484373",
+      "source_urls": [
+        "https://doi.org/10.15458/2335-4216.1273",
+        "https://www.ebrjournal.net/cgi/viewcontent.cgi?article=1273&context=home",
+        "https://doaj.org/article/ca9b19fcf6a24132b9998372af8fd20b",
+        "https://doaj.org/article/eb7154ae9a74450bae5dddfe26856c8d",
+        "https://doaj.org/article/fddfd12c30b643ceb8f7485bd754f62e"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Dual Sourcing Inventory Model with Uncertain Supply and Advance Capacity Information",
+      "doi": "https://doi.org/10.1007/978-3-319-28697-6_36",
+      "year": 2016,
+      "openalex_id": "https://openalex.org/W2460848041",
+      "source_urls": [
+        "https://doi.org/10.1007/978-3-319-28697-6_36"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Information asymmetry in supply chains and blockchain technology: An empirical examination",
+      "doi": "https://doi.org/10.5204/thesis.eprints.236968",
+      "year": 2022,
+      "openalex_id": "https://openalex.org/W4311783552",
+      "source_urls": [
+        "https://doi.org/10.5204/thesis.eprints.236968",
+        "https://eprints.qut.edu.au/236968/1/Chen%2BLi%2BThesis%281%29.pdf"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Warranty Inventory Optimization with Advance Supply Information",
+      "doi": "https://doi.org/10.2139/ssrn.2817694",
+      "year": 2016,
+      "openalex_id": "https://openalex.org/W2521186323",
+      "source_urls": [
+        "https://doi.org/10.2139/ssrn.2817694"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Heuristic Approach to Inventory Control with Advance Capacity Information",
+      "doi": "https://doi.org/10.2478/v10051-009-0010-5",
+      "year": 2009,
+      "openalex_id": "https://openalex.org/W2006422028",
+      "source_urls": [
+        "https://doi.org/10.2478/v10051-009-0010-5",
+        "https://www.sciendo.com/pdf/10.2478/v10051-009-0010-5",
+        "https://dk.um.si/IzpisGradiva.php?id=69122",
+        "https://repozitorij.uni-lj.si/IzpisGradiva.php?id=57407"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Optimal Inventory Control with Advance Supply Information",
+      "doi": "https://doi.org/10.15458/85451.28",
+      "year": 2016,
+      "openalex_id": "https://openalex.org/W2571969442",
+      "source_urls": [
+        "https://doi.org/10.15458/85451.28",
+        "https://www.ebrjournal.net/cgi/viewcontent.cgi?article=1156&context=home",
+        "https://doaj.org/article/4d1bc480b840442fb5bc5f7446b1c6d3"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Value of information in agro-food logistics management : a case of the Dutch floriculture supply chain network",
+      "doi": "https://doi.org/10.18174/477360",
+      "year": 2019,
+      "openalex_id": "https://openalex.org/W2975361284",
+      "source_urls": [
+        "https://doi.org/10.18174/477360",
+        "https://research.wur.nl/en/publications/value-of-information-in-agro-food-logistics-management-a-case-of-",
+        "https://edepot.wur.nl/477360"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    },
+    {
+      "title": "Stochastic inventory systems with regenerative capacity",
+      "doi": "https://doi.org/10.1016/j.ejor.2026.04.004",
+      "year": 2026,
+      "openalex_id": "https://openalex.org/W7151514933",
+      "source_urls": [
+        "https://doi.org/10.1016/j.ejor.2026.04.004",
+        "https://hdl.handle.net/10356/220768"
+      ],
+      "inspection_default": "bibliographic screening only; see companion audit for explicitly inspected works"
+    }
+  ]
+}
