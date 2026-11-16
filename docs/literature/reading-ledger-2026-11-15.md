@@ -615,9 +615,9 @@ Reading status legend: `bibliography_verified` = metadata only; `abstract_read` 
 ### ECON077 · 2011 — Inventory management with advance capacity information
 
 - **Author / form:** M. Jakšič; J.C. Fransoo; T. Tan; A.G. de Kok; B. Rusjan · journal_article
-- **Theme / reading status:** `inventory_and_supply_networks` / `proof_audited`
+- **Theme / reading status:** `inventory_and_supply_networks` / `abstract_read`
 - **Source:** https://doi.org/10.1002/nav.20450
-- **Actually inspected:** 2011 journal metadata and abstract only；2008 BETA Working Paper 249: model, Theorem 4, Appendix Lemma 4 and proof of Theorem 4；Comparison with 2016 thesis Chapter 2 conjectures
+- **Actually inspected:** 2011 journal metadata and abstract only; the journal proof has not been audited. Separate proof-level inspection concerns [2008 BETA Working Paper 249](https://pure.tue.nl/ws/portalfiles/portal/3296948/691623823560851.pdf): model, Theorem 4, Appendix Lemma 4 and proof of Theorem 4, and the corresponding Chapter 2 claims in the [2016 thesis](https://pure.tue.nl/ws/files/41303873/20161031_Jaksic.pdf).
 - **Specific takeaway / limitation:** 2008 Theorem 4 把较早产能损失引起较高当前基库存和损失敏感性上界列作定理；2016 论文把相应命题列为 Conjecture 2.1/2.2。本轮对较早损失排序构造了三期 IID 精确反例，并独立证明每单位产能损失的基库存增量上界。 当前最明确可执行的数学研究：确定何种分布或产能条件恢复时间位置单调性，并给错误猜想的严格更正。具体推导与独立 LP 验证在 aci_audit.md。
 
 ### ECON078 · 2008 — Inventory Management with Advance Demand Information and Flexible Delivery
