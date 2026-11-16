@@ -4,7 +4,7 @@ Please consider “Capacity-loss timing and optimal inventory targets: a complet
 
 The paper gives six explicit cost thresholds that classify optimal current inventory targets after equal early and late capacity losses for every nondegenerate Bernoulli demand probability and every positive holding/backlog cost ratio. Two open regions reverse the proposed temporal ordering and two attain its opposite; both signs saturate the target-spread bound. The analysis includes every real minimizer interval at equality and explicit continuous-density extensions.
 
-A low-backlog example also contradicts a separate h>b equal-target assertion in the 2016 thesis. Version-specific criticism is limited to the precisely identified working-paper and thesis claims; the paper does not infer an unread final-journal theorem. The information-value section is explicitly a separate common-loss experiment with matched recourse.
+The reversals disprove Conjecture 1 in Jakšič et al., Naval Research Logistics 58 (2011), 355–369, DOI 10.1002/nav.20450. A low-backlog example also contradicts the separate h>b equal-target assertion on its printed p.360. The final typeset model, target definition and appendix were checked directly; its coordinate-monotonicity Theorem 4 is not contradicted. We also give a proof of the prior-known sensitivity bound that does not depend on the false temporal conjecture. The information-value section is explicitly a separate common-loss experiment with matched recourse.
 
 Two different exact implementations and an independent continuous scenario-tree LP accompany the symbolic proof.
 

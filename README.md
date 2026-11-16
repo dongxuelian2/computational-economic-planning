@@ -9,7 +9,7 @@ For every Bernoulli demand probability `0<p<1`, explicit cost thresholds give
 both strict timing orderings and every boundary minimizer interval. Both signs
 attain the universal target spread `eta`. Exact rational real-line Bellman
 certificates and an independent scenario-tree LP accompany the proof. External
-review and final-journal-version priority checks remain outstanding.
+peer review and broader priority clearance remain outstanding.
 
 **Manuscript-stage update:** [complete paper](manuscript/main.tex) covers
 every positive cost ratio, with six exact thresholds and all boundary intervals.
@@ -17,6 +17,10 @@ Independent model-agent review added a low-backlog reversal (`h=1,b=1/2`)
 and corrected the loss-location benchmark's capacity-dependence scope.
 See the [review](docs/research/independent-aci-review-2026-11-15.md) and
 [version/priority audit](docs/literature/aci-version-priority-audit-2026-11-15.md).
+The supplied final 2011 journal article has now been
+[independently checked](docs/research/final-journal-independent-review-2026-11-15.md):
+the examples disprove its Conjecture 1 and adjacent h>b assertion on p.360.
+Its Theorem 4 is a different coordinate-monotonicity result and remains unaffected.
 Build the paper with `bash scripts/build_manuscript.sh`.
 
 With Pandoc and XeLaTeX installed, `bash scripts/build_proof_pdf.sh` renders
@@ -26,7 +30,7 @@ the complete theorem note to `output/pdf/`.
 
 **Reference baseline (classical):** For nonnegative input coefficients \(A\) and final demand \(d\), solve \((I-A)x=d\) subject to production viability and capacities. [Draft PR #1](https://github.com/dongxuelian2/computational-economic-planning/pull/1) adds matrix-box uncertainty bounds and demand-headroom calculations. This is a documented reference, **not** a new Leontief theorem.
 
-**Active mathematical research:** finite-horizon advance capacity information (ACI). A concrete three-period i.i.d.-demand model contradicts the proposed temporal ordering of optimal base-stock responses to equal capacity losses, while an independent convex-operator argument establishes a valid \(0\le\Delta y^*\le\eta\) sensitivity bound. Further audits of hidden-demand common beliefs and noncommuting production-network paths are separate, precisely scoped leads. Publication priority and later versions require additional review.
+**Active mathematical research:** finite-horizon advance capacity information (ACI). A concrete three-period i.i.d.-demand model contradicts the published conjecture on temporal ordering of optimal base-stock responses to equal capacity losses, while an independent convex-operator argument establishes a valid \(0\le\Delta y^*\le\eta\) sensitivity bound. Further audits of hidden-demand common beliefs and noncommuting production-network paths are separate, precisely scoped leads. Broader publication priority requires additional review.
 
 ## Research navigation
 

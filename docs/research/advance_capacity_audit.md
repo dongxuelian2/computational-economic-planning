@@ -12,7 +12,7 @@ Research audit: 2026-11-15. Source version and mathematical scope matter. The co
 
 Marko Jakšič, *Inventory models with uncertain supply* (PhD thesis, TU Eindhoven, 2016), Chapter 2, pp. 25–32 and Appendix A, pp. 50–56: [thesis PDF](https://pure.tue.nl/ws/files/41303873/20161031_Jaksic.pdf). Conjecture 2.1 says that, when equal capacity losses occur in consecutive future periods, the earlier loss should induce at least as high a current base-stock target. Conjecture 2.2 states an \(\eta\)-unit loss in one future capacity increases the base-stock target by at most \(\eta\).
 
-Earlier: Jakšič, Fransoo, Tan, de Kok & Rusjan (2008), BETA Working Paper 249, *Inventory management with advance capacity information*, [working paper](https://pure.tue.nl/ws/portalfiles/portal/3296948/691623823560851.pdf), Theorem 4 and Appendix. A later 2011 journal article, [DOI 10.1002/nav.20450](https://doi.org/10.1002/nav.20450), is identified bibliographically, but the full final text was **not** checked. Do not claim to have refuted the journal version.
+Earlier: Jakšič, Fransoo, Tan, de Kok & Rusjan (2008), BETA Working Paper 249, *Inventory management with advance capacity information*, [working paper](https://pure.tue.nl/ws/portalfiles/portal/3296948/691623823560851.pdf), Theorem 4 and Appendix. The user subsequently supplied the final 2011 journal article, [DOI 10.1002/nav.20450](https://doi.org/10.1002/nav.20450). Its model, target definition, Conjectures 1–2 on p.360 and Appendix A on p.368 have now been [independently checked](final-journal-independent-review-2026-11-15.md). The counterexample disproves final Conjecture 1, while the low-cost example in the complete manuscript also contradicts its adjacent h>b assertion. Final Theorem 4 concerns coordinate monotonicity and is not refuted.
 
 ## Three-period model and exact counterexample
 
@@ -92,7 +92,7 @@ This is an **independent correct proof of a claim already present in the 2008 so
 
 ## Local defect in the older proof
 
-The 2008 working paper's Appendix for Theorem 4 replaces a capacity loss with a stock-position translation in a derivative **as an equality**. These are different resources. In our model at \(y=5/2\), the actual derivative for future capacities (0,2) is \(1/4\), whereas the alleged translated expression evaluates to \(-1/2\). A valid one-sided derivative sandwich replaces that equality, but does not prove the temporal ranking. The 2016 thesis uses a valid comparison for a related first-coordinate lemma.
+The 2008 working paper's Appendix for Theorem 4 replaces a capacity loss with a stock-position translation in a derivative **as an equality**. These are different resources. In our model at \(y=5/2\), the actual derivative for future capacities (0,2) is \(1/4\), whereas the alleged translated expression evaluates to \(-1/2\). A valid one-sided derivative sandwich replaces that equality, but does not prove the temporal ranking. The 2016 thesis uses a valid comparison for a related first-coordinate lemma. The final 2011 article likewise uses an inequality in Lemma 4, Eq.(A9), p.368; the WP equality defect must not be attributed to it. Its proof of Conjecture 2 on the same page explicitly assumes Conjecture 1.
 
 ## Reproduce and audit priorities
 
@@ -101,4 +101,4 @@ python scripts/reproduce_aci_counterexample.py
 python -m pytest -q
 ~~~
 
-The original standard-library script checks rational Bellman values and adjacent slopes; convexity supplies real-order global optimality. The continuation adds `scripts/aci_piecewise.py`, a rational Bellman solver over the whole real line, and `scripts/check_aci_scenario_lp.py`, a separate continuous scenario-tree LP implementation. The latter uses floating point and checks rather than proves the new theorem. Before claims about the final journal version, obtain the **2011 final journal text** and complete the forward-citation/erratum audit.
+The original standard-library script checks rational Bellman values and adjacent slopes; convexity supplies real-order global optimality. The continuation adds `scripts/aci_piecewise.py`, a rational Bellman solver over the whole real line, and `scripts/check_aci_scenario_lp.py`, a separate continuous scenario-tree LP implementation. The latter uses floating point and checks rather than proves the new theorem. The final journal model and claim comparison is now complete; the [version/priority audit](../literature/aci-version-priority-audit-2026-11-15.md) records the remaining limits of the bounded forward-citation/erratum search.

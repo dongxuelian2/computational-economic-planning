@@ -615,10 +615,10 @@ Reading status legend: `bibliography_verified` = metadata only; `abstract_read` 
 ### ECON077 · 2011 — Inventory management with advance capacity information
 
 - **Author / form:** M. Jakšič; J.C. Fransoo; T. Tan; A.G. de Kok; B. Rusjan · journal_article
-- **Theme / reading status:** `inventory_and_supply_networks` / `abstract_read`
+- **Theme / reading status:** `inventory_and_supply_networks` / `proof_audited`
 - **Source:** https://doi.org/10.1002/nav.20450
-- **Actually inspected:** 2011 journal metadata and abstract only; the journal proof has not been audited. Separate proof-level inspection concerns [2008 BETA Working Paper 249](https://pure.tue.nl/ws/portalfiles/portal/3296948/691623823560851.pdf): model, Theorem 4, Appendix Lemma 4 and proof of Theorem 4, and the corresponding Chapter 2 claims in the [2016 thesis](https://pure.tue.nl/ws/files/41303873/20161031_Jaksic.pdf).
-- **Specific takeaway / limitation:** 2008 Theorem 4 把较早产能损失引起较高当前基库存和损失敏感性上界列作定理；2016 论文把相应命题列为 Conjecture 2.1/2.2。本轮对较早损失排序构造了三期 IID 精确反例，并独立证明每单位产能损失的基库存增量上界。 当前最明确可执行的数学研究：确定何种分布或产能条件恢复时间位置单调性，并给错误猜想的严格更正。具体推导与独立 LP 验证在 aci_audit.md。
+- **Actually inspected:** User-supplied final typeset journal copy: model pp.357–358, Eq.(4)–(5), target definition and Theorem 4 pp.358–359, Conjectures 1–2 and adjacent h>b assertion p.360, Appendix A Lemma 4 / Eq.(A9) and proof of Conjecture 2 p.368. Critical pages rendered and checked by an independent internal agent. Also inspected [2008 BETA WP 249](https://pure.tue.nl/ws/portalfiles/portal/3296948/691623823560851.pdf) and the corresponding [2016 thesis](https://pure.tue.nl/ws/files/41303873/20161031_Jaksic.pdf) claims; see the [version audit](aci-version-priority-audit-2026-11-15.md).
+- **Specific takeaway / limitation:** 最终期刊版把时间排序列为 Conjecture 1、敏感性界列为 Conjecture 2；p.360 另断言 h>b 时两目标相等。三期 IID 精确反例否定前者及相等断言；独立夹逼证明保留敏感性界。最终版 Theorem 4 是坐标单调性，未被否定；附录对 Conjecture 2 的一般证明依赖 Conjecture 1，但未照搬 WP 的错误等式。完整六阈值分类在 manuscript/main.tex。有限检索未发现相同分类，不等于穷尽优先权审计或外部同行评审。
 
 ### ECON078 · 2008 — Inventory Management with Advance Demand Information and Flexible Delivery
 

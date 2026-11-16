@@ -31,11 +31,14 @@ computations do not replace the symbolic proofs.
 
 The [version and priority audit](../docs/literature/aci-version-priority-audit-2026-11-15.md)
 distinguishes actual full-text/section inspection from metadata screening.
-The final 2011 journal typesetting remains unavailable; a user-authorized
-request has been sent to its corresponding author. Criticism in the paper
-is explicitly limited to the 2008 working-paper and 2016 thesis assertions.
-The new classification is presented as a standalone result, not an
-unaudited correction of a final journal theorem.
+The user supplied the final 2011 journal typesetting, and a separate
+[source review](../docs/research/final-journal-independent-review-2026-11-15.md)
+checked its model, target definition, Conjectures 1–2 and Appendix A.
+The reversals disprove Conjecture 1 and the adjacent h>b assertion on
+printed p.360. Its coordinate-monotonicity Theorem 4 is not contradicted.
+The older working-paper proof defect is not attributed to the final article.
+The source PDF and its rendered pages are excluded from this package;
+the package contains our own manuscript and audit reports.
 
 The independent reviewer was a separate model agent. Its report is not
 external human peer review or a journal decision. The loss-location

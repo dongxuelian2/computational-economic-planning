@@ -6,7 +6,9 @@ See the [independent review](independent-aci-review-2026-11-15.md) for the
 low-cost proof. The paper's loss-location experiment is explicitly separate
 from the source's independent-capacity law and assumes location independent
 of demands. Its [version audit](../literature/aci-version-priority-audit-2026-11-15.md)
-records actual source coverage; the author-copy request is pending.
+records actual source coverage. The user-supplied final journal copy has now
+been [independently checked](final-journal-independent-review-2026-11-15.md):
+the examples disprove Conjecture 1 and the adjacent h>b assertion on p.360.
 Independent model-agent and integration reviews are complete, but are not
 external human peer review. Historical stopping-point language below is
 superseded by this continuation.
@@ -15,7 +17,8 @@ Research proof draft, 2026-11-15. This extends the isolated `p=1/2,b/h=5`
 example to every nondegenerate Bernoulli demand frequency, characterizes
 the exact cost thresholds, and attains both directions of the universal
 timing-spread bound. External peer review and an exhaustive priority audit
-remain outstanding. The 2011 journal full text has not been obtained.
+remain outstanding. Final-journal source comparison is complete as described
+in the continuation above.
 
 ## 1. Model and main result
 
@@ -271,14 +274,18 @@ the strict ordering by the same uniform Lipschitz/coercive-growth argument
 as [the original audit](advance_capacity_audit.md); this note does not
 claim that the displayed exact thresholds remain unchanged after smoothing.
 
-The target assertion is Conjecture 2.1 in Jakšič's
+The target assertion is Conjecture 1, printed p.360, in the supplied
+[final 2011 journal article](https://doi.org/10.1002/nav.20450),
+Conjecture 2.1 in Jakšič's
 [2016 thesis, Chapter 2](https://pure.tue.nl/ws/files/41303873/20161031_Jaksic.pdf),
 and Theorem 4(1) of the
 [2008 BETA working paper](https://pure.tue.nl/ws/portalfiles/portal/3296948/691623823560851.pdf).
-The surviving one-coordinate bound already appears in these sources.
-The [2011 journal page](https://onlinelibrary.wiley.com/doi/10.1002/nav.20450)
-was rechecked on 2026-11-15, but its full text/PDF was unavailable through
-the tested routes. No assertion is made about the final journal theorem.
+The surviving one-coordinate bound already appears in these sources,
+including final Conjecture 2. Its final Appendix A proof depends on
+Conjecture 1; the manuscript supplies an independent proof. Final Theorem 4
+is coordinate monotonicity and is not refuted. The erroneous WP equality
+proof is not attributed to the final article.
 Bounded searches for the title, timing conjecture and counterexamples did
 not find this sharp parameter family; this is not exhaustive priority
-clearance. No external reviewer or independent agent has reviewed it.
+clearance. Independent internal model-agent reviews are recorded above;
+external human peer review remains outstanding.

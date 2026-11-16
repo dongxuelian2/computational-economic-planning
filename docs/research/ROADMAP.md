@@ -3,9 +3,12 @@
 **Current manuscript:** [main.tex](../../manuscript/main.tex) proves the
 six-threshold classification for all positive costs and incorporates independent
 model-agent review. The [version/priority audit](../literature/aci-version-priority-audit-2026-11-15.md)
-records actual coverage and unavailable final-journal routes. An authorized
-request for the final copy has been sent to the author; its response is pending.
-The paper's criticism targets only the precisely identified thesis/WP assertions.
+records actual coverage and historical final-journal access failures.
+The user supplied the final typeset article, and a
+[separate final-version review](final-journal-independent-review-2026-11-15.md)
+confirmed that both reversals disprove Conjecture 1 on p.360; the low-cost
+example also disproves the adjacent h>b assertion. Final Theorem 4 is
+coordinate monotonicity and is not contradicted.
 
 ## Objective
 
@@ -18,12 +21,13 @@ now gives a full cost-ratio phase diagram for every `0<p<1` in a three-period
 iid family, the sharp universal timing spread with equality in both directions,
 and exact value/regret for learning the loss location. The continuous-domain
 Bellman and independent scenario-tree LP implementations are included.
-External review and the final-2011-version audit remain open gates; the
-computations do not close them.
+The final-version comparison and independent internal source review are
+complete. External peer review and broader priority clearance remain open;
+the computations do not close them.
 
-**Source:** Jakšič et al., BETA Working Paper 249 (2008), and Marko Jakšič, *Inventory models with uncertain supply* (2016), Chapter 2, Conjectures 2.1–2.2. The 2011 Naval Research Logistics journal version has not been checked in full; never claim a refutation of its final theorem without reading it.
+**Sources:** Jakšič et al., *Naval Research Logistics* 58 (2011), 355–369, DOI 10.1002/nav.20450, Conjectures 1–2 on p.360; BETA Working Paper 249 (2008), Theorem 4(1)–(2); and Marko Jakšič, *Inventory models with uncertain supply* (2016), Chapter 2, Conjectures 2.1–2.2. The final journal model, target definition, conjectures and Appendix A have now been directly audited. The earlier WP's erroneous stock-translation equality is not present in the final temporal comparison.
 
-1. **Source-version audit.** Obtain the 2011 final journal version (DOI 10.1002/nav.20450), identify exact published assertion, inspect subsequent errata/citations and changes from the 2008 working paper to the 2016 thesis.
+1. **Source-version audit.** Final typeset comparison completed; published temporal assertion is Conjecture 1. Bounded erratum/forward-citation checks are documented. Continue broader priority review with explicit inspection levels before submission.
 2. **Formalize the counterexample.** Three periods, i.i.d. demands 0 or 2 with probability 1/2, h=1, b=5, \(\alpha=1\). A one-unit loss in future period 2 changes \((q_2,q_3)=(1,2)\) to (0,2) without changing the optimal first-period post-order stock (2). A loss in period 3 yields (1,1) and raises the unique target to 3. Include exact Bellman values, real-order convexity and an independent scenario-tree LP check. See [audit](advance_capacity_audit.md) and [script](../../scripts/reproduce_aci_counterexample.py).
 3. **Prove the surviving bound independently.** With future capacity \(q_i\) reduced by \(\eta\ge0\), derive \(0\le\hat y(q-\eta e_i)-\hat y(q)\le\eta\) through a derivative sandwich for convex capacity-clipping operators, not from the false temporal ordering. Obtain vector \(L^1\) sensitivity.
 4. **Identify the sharp positive theorem.** Map exact parameter regions; test whether a two-period horizon, deterministic demand, constrained cost ratio, fixed bottleneck location or extra information order restores temporal monotonicity. Favor a structural necessary-and-sufficient condition or sharp restricted-family theorem over more sample rows.

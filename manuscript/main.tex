@@ -23,7 +23,8 @@
 \maketitle
 \begin{abstract}
 An earlier loss of production capacity need not increase the current
-base-stock target more than an equally large later loss. We give a complete
+base-stock target more than an equally large later loss, contrary to a
+published advance-capacity-information conjecture. We give a complete
 classification for a three-period backlogged inventory model with
 independent identically distributed two-point demand. For every
 nondegenerate demand probability and every positive holding-to-backlog
@@ -51,16 +52,15 @@ and how the change depends on the time of that loss. A coordinate
 sensitivity bound does not by itself order the effects of losses in
 different periods.
 
-The temporal ordering is stated in Jak\v{s}i\v{c}'s thesis
-\cite[Conjecture 2.1]{Thesis}: an earlier equal capacity reduction is
-proposed to produce at least as high a current target. The preceding
-discussion on printed page 31 additionally states that the two targets
-coincide when $h>b$. The 2008 working paper \cite[Theorem 4(1)]{WP}
-contains the temporal assertion as a theorem. These are the precisely
-identified versions examined here. A related 2011 journal article is
-\cite{Journal}; its final typeset theorem is not assumed identical to
-either of these versions, and no correction of that final text is
-claimed in this paper.
+Jak\v{s}i\v{c} et al.\ propose that an earlier equal capacity reduction
+produces at least as high a current target
+\cite[Conjecture 1, p.~360]{Journal}. The immediately preceding discussion
+also asserts that the two targets coincide when $h>b$. We disprove both
+assertions within the published model. The temporal comparison was
+Theorem 4(1) in the 2008 working paper \cite{WP} and later appears as
+Conjecture 2.1 in the 2016 thesis \cite{Thesis}. The final journal's
+Theorem 4 concerns coordinatewise capacity monotonicity; our examples
+do not contradict it.
 
 We resolve the temporal comparison completely in one finite-horizon
 family. For each demand probability $p\in(0,1)$, six explicit thresholds
@@ -105,10 +105,12 @@ and late-loss vectors
  q^{\Ecase}=(0,2\eta),\qquad q^{\Lcase}=(\eta,\eta).
 \]
 Both remove $\eta$ units and leave the same total future capacity.
-They are compared as deterministic known future vectors. They can also
-be conditional ACI states of independent capacity laws assigning positive
-probability to all their coordinates. A two-point prior on \emph{these
-vectors alone} is a different experiment, specified in
+They are compared as known future vectors. To embed all three vectors in
+one independent capacity process, let $Q_2$ have support $\{0,\eta\}$
+and $Q_3$ have support $\{\eta,2\eta\}$, with positive probabilities
+and independent of demands. Each vector is then a possible fully revealed
+ACI state. A two-point prior on \emph{the two loss vectors alone} is a
+different experiment, specified in
 Section~\ref{sec:information}.
 
 Set $r=b/h$, $u=1-p$, $c=3-3p+p^2$ and $r_0=u/p$. Define
@@ -269,8 +271,11 @@ are uniquely 2. This completes the proof of Theorem~\ref{thm:phase}.
 
 \section{Sensitivity and sharpness}\label{sec:sensitivity}
 The next bound separates coordinate monotonicity from the false temporal
-comparison. Its coordinate statement is already present in
-\cite{WP,Thesis}; the proof does not use temporal ordering.
+comparison. Its coordinate statement is prior-known
+\cite[Conjecture 2, p.~360]{Journal}; see also \cite{WP,Thesis}.
+The journal's Appendix A, p.~368, derives the general bound using
+Conjecture 1 and a first-coordinate lemma. The following proof dispenses
+with temporal ordering.
 
 \begin{proposition}\label{prop:sensitivity}
 In a finite-horizon, zero-order-cost, backlogged inventory system with
@@ -323,8 +328,8 @@ $y$ & $J_{1,\Ecase}(y)$ & $J_{1,\Lcase}(y)$\\\midrule
 \end{tabular}
 \end{center}
 The targets are uniquely 0 and 1, while the baseline target is 0.
-This contradicts both the proposed temporal ordering and the separate
-$h>b$ equal-target assertion on printed page 31 of \cite{Thesis}.
+This contradicts both Conjecture 1 and the separate $h>b$ equal-target
+assertion on p.~360 of \cite{Journal}; both also appear in \cite{Thesis}.
 For $h=1,b=5$, the targets are uniquely 2 and 3, with optimal objective
 values $6$ and $21/4$; the baseline target is 2, with value $9/2$.
 Neither example asserts that target ordering determines cost ordering.
@@ -398,15 +403,20 @@ precisely matched information experiment, not a new generic information
 identity.
 
 \section{Source scope, reproducibility and further questions}
-The counterexamples use the Bellman recursion and terminal condition
-of \cite{WP,Thesis}, with three periods and complete future ACI.
-Both sources permit the relevant deterministic conditional capacity
-vectors; the thesis explicitly discusses $h>b$. The continuous-density
-extension addresses any concern about the source's use of density notation.
-The final journal article \cite{Journal} is identified bibliographically,
-but its full typeset text was unavailable for the version comparison.
-Our source-specific criticism is therefore limited to the exact
-working-paper and thesis assertions identified in the introduction.
+The counterexamples specialize the final journal's Bellman recursion
+\cite[Eq.~(4), p.~358]{Journal} to $T=3$, ACI horizon $n=2$,
+$\alpha=1$ and $f_4=0$. Its Eq.~(5) and Theorem 2 define the same
+unconstrained target and smallest-minimizer selector as used here.
+The independent-capacity embedding in Section~\ref{sec:model} respects
+the source's periodwise independence assumption. The continuous-density
+extension also removes reliance on the interpretation of density notation
+for discrete demands.
+
+Version distinctions matter. The final article labels the temporal
+comparison conjectural and does not reproduce the earlier working
+paper's erroneous stock-translation equality proof. Our journal-specific
+conclusions concern Conjecture 1, the adjacent $h>b$ assertion, and the
+independent justification of the prior-known sensitivity bound.
 
 Two exact implementations accompany the symbolic proof: a whole-real-line
 piecewise-linear solver, and an independently written integer-knot

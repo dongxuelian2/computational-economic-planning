@@ -1,5 +1,38 @@
 # Sharp ACI timing theorem audit, 2026-11-15
 
+## Supplied final-journal continuation
+
+The user supplied the 15-page typeset 2011 article. Direct source comparison
+and a separate internal model-agent review verified the model, smallest-target
+definition, final Conjectures 1–2 (p.360) and Appendix A (p.368). Both exact
+counterexamples refute final Conjecture 1; the low-cost example also refutes
+the adjacent h>b assertion. Final Theorem 4 is not the temporal comparison.
+The WP's false equality proof is absent from the final temporal discussion.
+The independent reviewer also read the integrated changes and found no
+blocking source/model/priority-scope issue.
+
+The anonymous manuscript, version audit, claim register, roadmap, older
+research notes, reading ledger and cover letter are updated. External
+human peer review and exhaustive priority clearance are not claimed.
+
+Checks repeated after the source update:
+
+* `env PYTHONPATH=src python -m pytest -q`: 13 passed, Python 3.14.10.
+* `python scripts/aci_piecewise.py`: 1,168 complete-phase whole-real-line
+  certificates at 73 distinct probabilities passed (plus the earlier
+  504-certificate high-cost subset and exact example checks).
+* `python scripts/audit_aci_full_phase.py`: 1,168 independent exact
+  knot-Bellman certificates passed, including all six boundaries and
+  recourse switches. The source reviewer separately reran this audit.
+* `bash scripts/build_manuscript.sh`: seven-page PDF compiled; no
+  overfull/underfull boxes or undefined references in the final log.
+  All seven pages were rendered and visually inspected.
+* The source archive passed checksum verification and isolated compilation.
+  Its only PDF is our manuscript; the supplied journal PDF and its rendered
+  pages are excluded. The compiled text cites final Conjecture 1 on p.360.
+* No mathematical code changed. The 102 scenario-tree LP comparisons below
+  are the earlier recorded run, not a new local LP run in this continuation.
+
 ## Manuscript continuation
 
 The full paper `manuscript/main.tex` now classifies every positive cost ratio.
@@ -10,11 +43,12 @@ demands. Each of the whole-real-line and independent knot solvers passed
 1,168 all-phase certificates at 73 distinct probabilities; the scenario-tree
 LP passed 102 comparisons; all 13 tests passed. All 7 final PDF pages were
 rendered and inspected and the final LaTeX log has no overflow or undefined
-reference warning. A user-authorized author-copy request was sent; no reply
-has yet been received. Version/priority coverage and access failures are
-recorded in the new literature audit. The paper does not claim a correction
-to the unavailable final journal theorem. Author identity is omitted at the
-user's request. The earlier snapshot below is historical.
+reference warning. At this earlier stage the final journal copy was
+unavailable and a user-authorized author-copy request had been sent.
+The supplied-copy continuation above supersedes that access limitation.
+Version/priority coverage and historical access failures are recorded in
+the literature audit. Author identity is omitted at the user's request.
+The earlier snapshot below is historical.
 
 ## Initial proof-note snapshot
 
